@@ -31,21 +31,70 @@ function draw() {
   //   }
   // }
 
+
+// // rotate
+// ctx.save();
+// ctx.fillStyle = 'red';
+// ctx.fillRect(30, 30, 100, 100);
+// ctx.rotate((Math.PI / 180)* 25);
+
+// ctx.fillStyle = 'green';
+// ctx.fillRect(30, 30, 100, 100);
+// ctx.restore();
+
+// ctx.fillStyle = 'yellow';
+// ctx.fillRect(150, 30, 100, 100);
+// ctx.translate(200, 80);
+// ctx.rotate((Math.PI / 180) * 25);
+// ctx.translate(-200, -80);
+// ctx.fillStyle = 'blue';
+// ctx.fillRect(150, 30, 100, 100);
+
+
+// scale
+
+// ctx.save();
+// ctx.scale(10, 3);
+// ctx.fillRect(1, 10, 10, 10)
+// ctx.restore();
+
+// ctx.scale(-1, 1);
+// ctx.font = '48px serif';
+// ctx.fillText('MDN', -135, 120);
+
+
+// transform
+var sin = Math.sin(Math.PI / 6);
+var cos = Math.cos(Math.PI / 6);
+ctx.translate(100, 100);
+var c = 0;
+for (let i = 0; i <= 12; i++) {
+  c = Math.floor(255 / 12 * i);
+  ctx.fillStyle = `rgb(${c},${c},${c})`
+  ctx.fillRect(0,0,100, 10);
+  ctx.transform(cos, sin, -sin, cos, 0, 0);
+}
+ctx.setTransform(-1, 0, 0, 1, 100, 100);
+ctx.fillStyle = 'rgba(255, 128, 255, 0.5)';
+ctx.fillRect(0, 50, 100, 100);
+
+
+
  // draw a simple rectangle, but scale it.
 
- ctx.fillRect(125, 230, 10, 10);
+//  ctx.fillRect(125, 230, 10, 10);
 
- // mirror horizontally
- ctx.font = '48px serif';
- ctx.fillText('MDN', 135, 420);
- ctx.scale(2, 3);
- ctx.fillRect(1, 10, 10, 10);
- ctx.restore();
+//  // mirror horizontally
+//  ctx.font = '48px serif';
+//  ctx.fillText('MDN', 135, 420);
+//  ctx.scale(2, 3);
+//  ctx.fillRect(1, 10, 10, 10);
+//  ctx.restore();
 
- // mirror horizontally
- ctx.scale(-1, 1);
- ctx.font = '48px serif';
- ctx.fillText('MDN', -135, 120);
+//  // mirror horizontally
+//  ctx.scale(-1, 1);
+//  ctx.font = '48px serif';
+//  ctx.fillText('MDN', -135, 120);
 
 
 
